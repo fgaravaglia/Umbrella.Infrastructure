@@ -1,0 +1,67 @@
+trigger:
+  branches:
+    include:
+      - main
+    exclude:
+      - master
+      - develop
+      - release-candidate
+
+  paths:
+    include:
+      - src
+    exclude:
+      - script/*
+      - libs/*
+      - devops/*
+
+schedules:
+  - cron: "0 12 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+        - main
+
+resources:
+  repositories:
+    # For type: github, name is <identity>/<repo> as in the examples above. For type: git (Azure Repos), name is <project>/<repo>.
+    - repository: coreTemplates
+      type: git
+      name: Umbrella/Umbrella.Devops
+      ref: refs/heads/main
+
+parameters:
+  - name: inputSonarScanEnabled
+    displayName: "Enable Sonar Scan"
+    type: boolean
+    default: True
+  - name: inputPublishPackage
+    displayName: "Publish Package to Nuget.Org"
+    type: boolean
+    default: False
+
+extends:
+  template: dotnet-pakages-pipeline.1.1.yaml@coreTemplates
+  parameters:
+    MajorVersion: 1
+    MinorVersion: 0
+    PatchVersion: 0
+    SonarScanEnabled: False
+    PublishPackage: False
+    NugetSecretFileName: Nuget.apikey.txt
+    # list of projects to build
+    ListOfProjToBuild:
+      - path: src/Infrastructure/Umbrella.Infrastructure.Tests
+        name: Umbrella.Infrastructure.Tests
+        publishRequired: false
+        isWebProj: False
+      - path: src/UI/Umbrella.UI.Web.MVCWidgets.Tests
+        name: Umbrella.UI.Web.MVCWidgets.Tests
+        publishRequired: false
+        isWebProj: False
+    # list of packages to push on nuget repo
+    ListOfProjToTest:
+      - path: src/Infrastructure/Umbrella.Infrastructure.Tests
+        name: Umbrella.Infrastructure.Tests
+      - path: src/UI/Umbrella.UI.Web.MVCWidgets.Tests
+        name: Umbrella.UI.Web.MVCWidgets.Tests
