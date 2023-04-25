@@ -57,11 +57,19 @@ extends:
         name: Umbrella.Logging
         publishRequired: false
         isWebProj: False
+      - path: src/Umbrella.Infrastructure.Cache.Tests
+        name: Umbrella.Infrastructure.Cache.Tests
+        publishRequired: false
+        isWebProj: False
+    ListOfProjToTest:
+      - path: src/Umbrella.Infrastructure.Tests
+        name: Umbrella.Infrastructure.Tests
+      - path: src/Umbrella.Infrastructure.Cache.Tests
+        name: Umbrella.Infrastructure.Cache.Tests
     ListOfProjToPublish:
       - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
       - path: src/Umbrella.Logging
         name: Umbrella.Logging
-    ListOfProjToTest:
-      - path: src/Umbrella.Infrastructure.Tests
-        name: Umbrella.Infrastructure.Tests
+      - path: src/Umbrella.Infrastructure.Cache
+        name: Umbrella.Infrastructure.Cache
