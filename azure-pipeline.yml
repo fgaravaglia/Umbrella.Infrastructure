@@ -31,8 +31,6 @@ resources:
       ref: refs/heads/main
       endpoint: Garaproject
 
-variables: 
-$(targetFramework)
 parameters:
   - name: inputSonarScanEnabled
     displayName: "Enable Sonar Scan"
