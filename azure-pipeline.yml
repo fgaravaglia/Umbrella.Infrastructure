@@ -29,6 +29,7 @@ resources:
       type: git
       name: Umbrella/Umbrella.Devops
       ref: refs/heads/main
+      endpoint: Garaproject
 
 parameters:
   - name: inputSonarScanEnabled
