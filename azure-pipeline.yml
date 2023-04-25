@@ -43,7 +43,7 @@ extends:
   template: dotnet-pakages-pipeline.1.2.yaml@coreTemplates
   parameters:
     MajorVersion: 1
-    MinorVersion: 0
+    MinorVersion: 3
     PatchVersion: 0
     SonarScanEnabled: False
     PublishPackage: False
@@ -53,11 +53,15 @@ extends:
         name: Umbrella.Infrastructure.Tests
         publishRequired: false
         isWebProj: False
+      - path: src/Umbrella.Logging
+        name: Umbrella.Logging
+        publishRequired: false
+        isWebProj: False
     ListOfProjToPublish:
       - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
-        publishRequired: false
-        isWebProj: False
+      - path: src/Umbrella.Logging
+        name: Umbrella.Logging
     ListOfProjToTest:
       - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
