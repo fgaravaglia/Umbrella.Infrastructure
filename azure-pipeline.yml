@@ -31,18 +31,20 @@ resources:
       ref: refs/heads/main
       endpoint: Garaproject
 
+variables: 
+$(targetFramework)
 parameters:
   - name: inputSonarScanEnabled
     displayName: "Enable Sonar Scan"
     type: boolean
-    default: True
+    default: False
   - name: inputPublishPackage
     displayName: "Publish Package to Nuget.Org"
     type: boolean
     default: False
 
 extends:
-  template: dotnet-pakages-pipeline.1.1.yaml@coreTemplates
+  template: dotnet-pakages-pipeline.1.2.yaml@coreTemplates
   parameters:
     MajorVersion: 1
     MinorVersion: 0
@@ -50,19 +52,16 @@ extends:
     SonarScanEnabled: False
     PublishPackage: False
     NugetSecretFileName: Nuget.apikey.txt
-    # list of projects to build
     ListOfProjToBuild:
       - path: src/Infrastructure/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
         publishRequired: false
         isWebProj: False
-      - path: src/UI/Umbrella.UI.Web.MVCWidgets.Tests
-        name: Umbrella.UI.Web.MVCWidgets.Tests
+    ListOfProjToPublish:
+      - path: src/Infrastructure/Umbrella.Infrastructure
+        name: Umbrella.Infrastructure
         publishRequired: false
         isWebProj: False
-    # list of packages to push on nuget repo
     ListOfProjToTest:
       - path: src/Infrastructure/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
-      - path: src/UI/Umbrella.UI.Web.MVCWidgets.Tests
-        name: Umbrella.UI.Web.MVCWidgets.Tests
