@@ -3,8 +3,6 @@ trigger:
     include:
       - main
     exclude:
-      - master
-      - develop
       - release-candidate
 
   paths:
