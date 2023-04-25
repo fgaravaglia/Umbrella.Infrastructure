@@ -51,15 +51,15 @@ extends:
     PublishPackage: False
     NugetSecretFileName: Nuget.apikey.txt
     ListOfProjToBuild:
-      - path: src/Infrastructure/Umbrella.Infrastructure.Tests
+      - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
         publishRequired: false
         isWebProj: False
     ListOfProjToPublish:
-      - path: src/Infrastructure/Umbrella.Infrastructure
+      - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
         publishRequired: false
         isWebProj: False
     ListOfProjToTest:
-      - path: src/Infrastructure/Umbrella.Infrastructure.Tests
+      - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
