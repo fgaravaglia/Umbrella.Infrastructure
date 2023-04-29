@@ -106,8 +106,8 @@ extends:
       - path: src/Umbrella.Infrastructure.Cache
         name: Umbrella.Infrastructure.Cache
         # Filestore
-      - path: src/Umbrella.Infrastructure.FileStore
-        name: Umbrella.Infrastructure.FileStore
+      - path: src/Umbrella.Infrastructure.FileStorage
+        name: Umbrella.Infrastructure.FileStorage
         # Flistorage GCP
       - path: src/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
         name: Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
