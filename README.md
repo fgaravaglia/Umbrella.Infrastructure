@@ -3,6 +3,14 @@ Library to Support generic capabilities in infrastructure Layer
 
 [![Build Status](https://garaproject.visualstudio.com/UmbrellaFramework/_apis/build/status%2FUmbrella.Infrastructure?repoName=fgaravaglia%2FUmbrella.Infrastructure&branchName=main)](https://garaproject.visualstudio.com/UmbrellaFramework/_build/latest?definitionId=89&repoName=fgaravaglia%2FUmbrella.Infrastructure&branchName=main)
 
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Umbrella.Infrastructure&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Umbrella.Infrastructure)
+
 
 [![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure/)
