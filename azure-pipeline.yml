@@ -33,7 +33,7 @@ parameters:
   - name: inputSonarScanEnabled
     displayName: "Enable Sonar Scan"
     type: boolean
-    default: False
+    default: True
   - name: inputPublishPackage
     displayName: "Publish Package to Nuget.Org"
     type: boolean
@@ -44,7 +44,7 @@ extends:
   parameters:
     MajorVersion: 1
     MinorVersion: 3
-    PatchVersion: 0
+    PatchVersion: 1
     SonarScanEnabled: ${{ parameters.inputSonarScanEnabled }}
     SonarSettings:
       ProjectKey: Umbrella.Infrastructure
@@ -73,6 +73,10 @@ extends:
         name: Umbrella.Infrastructure.Templating.Tests
         publishRequired: false
         isWebProj: False
+      - path: src/Umbrella.Security.Tests
+        name: Umbrella.Security.Tests
+        publishRequired: false
+        isWebProj: False
     ListOfProjToTest:
       - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
@@ -82,6 +86,8 @@ extends:
         name: Umbrella.Infrastructure.FileStorage.Tests
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
+      - path: src/Umbrella.Security.Tests
+        name: Umbrella.Security.Tests
     ListOfProjToPublish:
       - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
@@ -95,3 +101,5 @@ extends:
         name: Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
       - path: src/Umbrella.Infrastructure.Templating
         name: Umbrella.Infrastructure.Templating
+      - path: src/Umbrella.Security
+        name: Umbrella.Security
