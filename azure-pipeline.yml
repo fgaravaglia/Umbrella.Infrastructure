@@ -45,8 +45,12 @@ extends:
     MajorVersion: 1
     MinorVersion: 3
     PatchVersion: 0
-    SonarScanEnabled: False
-    PublishPackage: False
+    SonarScanEnabled: ${{ parameters.inputSonarScanEnabled }}
+    SonarSettings:
+      ProjectKey: Umbrella.Infrastructure
+      ProjectName: Umbrella.Infrastructure
+      TestReportFileName: cobertura.xml
+    PublishPackage: ${{ parameters.inputPublishPackage }}
     NugetSecretFileName: Nuget.apikey.txt
     ListOfProjToBuild:
       - path: src/Umbrella.Infrastructure.Tests
@@ -61,11 +65,17 @@ extends:
         name: Umbrella.Infrastructure.Cache.Tests
         publishRequired: false
         isWebProj: False
+      - path: src/Umbrella.Infrastructure.Templating.Tests
+        name: Umbrella.Infrastructure.Templating.Tests
+        publishRequired: false
+        isWebProj: False
     ListOfProjToTest:
       - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
       - path: src/Umbrella.Infrastructure.Cache.Tests
         name: Umbrella.Infrastructure.Cache.Tests
+      - path: src/Umbrella.Infrastructure.Templating.Tests
+        name: Umbrella.Infrastructure.Templating.Tests
     ListOfProjToPublish:
       - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
@@ -73,3 +83,5 @@ extends:
         name: Umbrella.Logging
       - path: src/Umbrella.Infrastructure.Cache
         name: Umbrella.Infrastructure.Cache
+      - path: src/Umbrella.Infrastructure.Templating
+        name: Umbrella.Infrastructure.Templating
