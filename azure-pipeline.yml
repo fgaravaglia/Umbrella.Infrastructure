@@ -65,8 +65,8 @@ extends:
         name: Umbrella.Infrastructure.Cache.Tests
         publishRequired: false
         isWebProj: False
-      - path: src/Umbrella.Infrastructure.Filestore
-        name: Umbrella.Infrastructure.Filestore
+      - path: src/Umbrella.Infrastructure.Firestore.Tests
+        name: Umbrella.Infrastructure.Firestore.Tests
         publishRequired: false
         isWebProj: False
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
@@ -88,6 +88,8 @@ extends:
         name: Umbrella.Infrastructure.Cache.Tests
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
         name: Umbrella.Infrastructure.FileStorage.Tests
+      - path: src/Umbrella.Infrastructure.Firestore.Tests
+        name: Umbrella.Infrastructure.Firestore.Tests
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
       - path: src/Umbrella.Security.Tests
