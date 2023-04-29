@@ -6,6 +6,7 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <GenerateFullPaths>true</GenerateFullPaths>
+    <NoWarn>S4792</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup>

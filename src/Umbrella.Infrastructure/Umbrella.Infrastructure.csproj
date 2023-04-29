@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <NoWarn>CS8602;S1112</NoWarn>
+    <NoWarn>CS8602;S112;S101</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup>
