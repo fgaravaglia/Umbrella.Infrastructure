@@ -20,8 +20,12 @@ Library to Support generic capabilities in infrastructure Layer
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.FileStorage.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage/)
 [![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.Firestore.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.Firestore/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.Firestore.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.Firestore/)
 [![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.Templating.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.Templating/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.Templating.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.Templating/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Security.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Security/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Security.svg)](https://www.nuget.org/packages/Umbrella.Security/)
 
 To install it, use proper command:
 
@@ -29,10 +33,11 @@ To install it, use proper command:
 dotnet add package Umbrella.Logging
 dotnet add package Umbrella.Infrastructure 
 dotnet add package Umbrella.Infrastructure.Cache 
+dotnet add package Umbrella.Infrastructure.FireStore
 dotnet add package Umbrella.Infrastructure.Templating
 dotnet add package Umbrella.Infrastructure.FileStorage
 dotnet add package Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
-
+dotnet add package Umbrella.Security
 ```
 
 For more details about download, see [NuGet Web Site](https://www.nuget.org/packages/Umbrella.Infrastructure/)
@@ -40,5 +45,7 @@ For more details about download, see [NuGet Web Site](https://www.nuget.org/pack
 You can find more details about libraries here:
 
 - [Umbrella.Infrastructure.Cache](/src/README.Cache.md)
+- [Umbrella.Infrastructure.FireStore](/src/README.Firestore.md)
 - [Umbrella.Infrastructure.FileStorage](/src/README.FileStorage.md)
 - [Umbrella.Infrastructure.Templating](/src/README.Templating.md)
+- [Umbrella.Security](/src/README.Security.md)
