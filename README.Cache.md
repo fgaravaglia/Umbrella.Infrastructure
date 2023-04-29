@@ -1,12 +1,10 @@
-# Caching
+# Umbrella.Infrastructure.Cache
+
 To install it, use proper command:
 
 ```
 dotnet add package Umbrella.Infrastructure.Cache 
 ```
-
-[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.Cache.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.Cache/)
-[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.Cache.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.Cache/)
 
 For more details about download, see [NuGet Web Site](https://www.nuget.org/packages/Umbrella.Infrastructure/)
 To enable Cache feature in your application you have to follow these simple steps.

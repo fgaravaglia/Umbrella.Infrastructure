@@ -27,9 +27,9 @@ namespace Umbrella.Infrastructure.Api
             this._Logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<APICallResponseDTO<T>> GetAsync<T>(APICallRequestDTO request) where T : class
+        public async Task<ApiCallResponseDTO<T>> GetAsync<T>(ApiCallRequestDTO request) where T : class
         {
-            var apiResponse = new APICallResponseDTO<T>();
+            var apiResponse = new ApiCallResponseDTO<T>();
             this._Logger.LogInformation("Start GetAsync - {BaseEndpoint}/{Method}", request.Url, request.MethodName);
             try
             {

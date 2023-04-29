@@ -6,6 +6,14 @@ Library to Support generic capabilities in infrastructure Layer
 
 [![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.Cache.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.Cache/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.Cache.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.Cache/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.FileStorage.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.FileStorage.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage/)
+[![Nuget](https://img.shields.io/nuget/v/Umbrella.Infrastructure.Templating.svg?style=plastic)](https://www.nuget.org/packages/Umbrella.Infrastructure.Templating/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Umbrella.Infrastructure.Templating.svg)](https://www.nuget.org/packages/Umbrella.Infrastructure.Templating/)
 
 To install it, use proper command:
 
@@ -13,6 +21,10 @@ To install it, use proper command:
 dotnet add package Umbrella.Logging
 dotnet add package Umbrella.Infrastructure 
 dotnet add package Umbrella.Infrastructure.Cache 
+dotnet add package Umbrella.Infrastructure.Templating
+dotnet add package Umbrella.Infrastructure.FileStorage
+dotnet add package Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
+
 ```
 
 For more details about download, see [NuGet Web Site](https://www.nuget.org/packages/Umbrella.Infrastructure/)
@@ -20,4 +32,5 @@ For more details about download, see [NuGet Web Site](https://www.nuget.org/pack
 You can find more details about libraries here:
 
 - [Umbrella.Infrastructure.Cache](/src/README.Cache.md)
+- [Umbrella.Infrastructure.FileStorage](/src/README.FileStorage.md)
 - [Umbrella.Infrastructure.Templating](/src/README.Templating.md)

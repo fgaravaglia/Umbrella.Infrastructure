@@ -91,7 +91,6 @@ namespace Umbrella.Infrastructure.Api
             if (obj == null)
                 return new List<KeyValuePair<string, string>>();
 
-            var builder = new StringBuilder();
             var objType = obj.GetType();
 
             var param = objType.GetProperties()

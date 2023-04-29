@@ -1,4 +1,5 @@
-# Templating
+# Umbrella.Infrastructure.Templating
+
 To install it, use proper command:
 
 ```

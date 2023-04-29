@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Umbrella.Infrastructure.Api
 {
-    public class APICallRequestDTO
+    public class ApiCallRequestDTO
     {
         public string Url { get; set; }
         public string MethodName { get; set; }
@@ -14,7 +14,7 @@ namespace Umbrella.Infrastructure.Api
         public string ContentType { get; set; }
         public string Token { get; set; }
 
-        public APICallRequestDTO()
+        public ApiCallRequestDTO()
         {
             ContentType = ContentTypes.ApplicationJson;
             Token = string.Empty;

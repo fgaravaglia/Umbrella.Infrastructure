@@ -11,13 +11,13 @@ namespace Umbrella.Infrastructure.Tests.Api
 {
     public class ApiCollerTests
     {
-        APICallRequestDTO _Request;
+        ApiCallRequestDTO _Request;
         ApiCaller _Client;
 
         [SetUp]
         public void Setup()
         {
-            this._Request = new APICallRequestDTO()
+            this._Request = new ApiCallRequestDTO()
             {
                 Url = "https://xxxxxxxxxxxxx-njkmy6ao7q-ey.a.run.app",
                 MethodName = "v1/appsettings/version",
@@ -56,7 +56,7 @@ namespace Umbrella.Infrastructure.Tests.Api
         {
             //**************** GIVEN
             this._Client = InstanceRestClient();
-            this._Request = new APICallRequestDTO()
+            this._Request = new ApiCallRequestDTO()
             {
                 Url = "https://xxxxxxxxxxxxx-njkmy6ao7q-ey.a.run.app",
                 MethodName = "v1/appsettings/version",

@@ -65,6 +65,10 @@ extends:
         name: Umbrella.Infrastructure.Cache.Tests
         publishRequired: false
         isWebProj: False
+      - path: src/Umbrella.Infrastructure.FileStorage.Tests
+        name: Umbrella.Infrastructure.FileStorage.Tests
+        publishRequired: false
+        isWebProj: False
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
         publishRequired: false
@@ -74,6 +78,8 @@ extends:
         name: Umbrella.Infrastructure.Tests
       - path: src/Umbrella.Infrastructure.Cache.Tests
         name: Umbrella.Infrastructure.Cache.Tests
+      - path: src/Umbrella.Infrastructure.FileStorage.Tests
+        name: Umbrella.Infrastructure.FileStorage.Tests
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
     ListOfProjToPublish:
@@ -83,5 +89,9 @@ extends:
         name: Umbrella.Logging
       - path: src/Umbrella.Infrastructure.Cache
         name: Umbrella.Infrastructure.Cache
+      - path: src/Umbrella.Infrastructure.FileStorage
+        name: Umbrella.Infrastructure.FileStorage
+      - path: src/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
+        name: Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
       - path: src/Umbrella.Infrastructure.Templating
         name: Umbrella.Infrastructure.Templating
