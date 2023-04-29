@@ -43,8 +43,8 @@ extends:
   template: dotnet-pakages-pipeline.1.2.yaml@coreTemplates
   parameters:
     MajorVersion: 1
-    MinorVersion: 3
-    PatchVersion: 1
+    MinorVersion: 5
+    PatchVersion: 0
     SonarScanEnabled: ${{ parameters.inputSonarScanEnabled }}
     SonarSettings:
       ProjectKey: Umbrella.Infrastructure
@@ -65,8 +65,8 @@ extends:
         name: Umbrella.Infrastructure.Cache.Tests
         publishRequired: false
         isWebProj: False
-      - path: src/Umbrella.Infrastructure.Filestore.Tests
-        name: Umbrella.Infrastructure.Filestore.Tests
+      - path: src/Umbrella.Infrastructure.Filestore
+        name: Umbrella.Infrastructure.Filestore
         publishRequired: false
         isWebProj: False
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
@@ -86,8 +86,6 @@ extends:
         name: Umbrella.Infrastructure.Tests
       - path: src/Umbrella.Infrastructure.Cache.Tests
         name: Umbrella.Infrastructure.Cache.Tests
-      - path: src/Umbrella.Infrastructure.Firestore.Tests
-        name: Umbrella.Infrastructure.Firestore.Tests
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
         name: Umbrella.Infrastructure.FileStorage.Tests
       - path: src/Umbrella.Infrastructure.Templating.Tests
