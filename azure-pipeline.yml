@@ -84,30 +84,42 @@ extends:
     ListOfProjToTest:
       - path: src/Umbrella.Infrastructure.Tests
         name: Umbrella.Infrastructure.Tests
+        #Cache
       - path: src/Umbrella.Infrastructure.Cache.Tests
         name: Umbrella.Infrastructure.Cache.Tests
+        # FileStorage
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
         name: Umbrella.Infrastructure.FileStorage.Tests
+        # Firestore
       - path: src/Umbrella.Infrastructure.Firestore.Tests
         name: Umbrella.Infrastructure.Firestore.Tests
+        # Templating
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
+        # Security
       - path: src/Umbrella.Security.Tests
         name: Umbrella.Security.Tests
     ListOfProjToPublish:
       - path: src/Umbrella.Infrastructure
         name: Umbrella.Infrastructure
-      - path: src/Umbrella.Logging
-        name: Umbrella.Logging
+        # Cache
       - path: src/Umbrella.Infrastructure.Cache
         name: Umbrella.Infrastructure.Cache
+        # Filestore
       - path: src/Umbrella.Infrastructure.FileStore
         name: Umbrella.Infrastructure.FileStore
-      - path: src/Umbrella.Infrastructure.Firestore
-        name: Umbrella.Infrastructure.Firestore
+        # Flistorage GCP
       - path: src/Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
         name: Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
+        # Firestore
+      - path: src/Umbrella.Infrastructure.Firestore
+        name: Umbrella.Infrastructure.Firestore
+        # Templating
       - path: src/Umbrella.Infrastructure.Templating
         name: Umbrella.Infrastructure.Templating
+        # Logging
+      - path: src/Umbrella.Logging
+        name: Umbrella.Logging
+        # Security
       - path: src/Umbrella.Security
         name: Umbrella.Security
