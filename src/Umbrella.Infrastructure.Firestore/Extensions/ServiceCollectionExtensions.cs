@@ -10,6 +10,20 @@ namespace Umbrella.Infrastructure.Firestore.Extensions
     /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Registers a repsoitory. 
+        /// <para>
+        /// In case of Localhost environment, it also set credentials into APSNET Variable
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TImpl"></typeparam>
+        /// <typeparam name="Tentity"></typeparam>
+        /// <param name="services"></param>
+        /// <param name="instanceFactory"></param>
+        /// <param name="environmentName"></param>
+        /// <param name="jsonCredentialsFilePath">full path to json file of credential for GCP project</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public static void AddRepository<T, TImpl, Tentity>(this IServiceCollection services, 
                                                             Func<IServiceProvider, TImpl> instanceFactory, 
                                                             string environmentName, string jsonCredentialsFilePath = "")

@@ -14,8 +14,14 @@ namespace Umbrella.Infrastructure.Firestore
     /// <typeparam name="T"></typeparam>
     public class BaseRepository<T> : IFirestoreDataRepository<T> where T : IBaseFirestoreData
     {
+        #region Fields
         readonly bool _AutoGenerateID;
         readonly string _CollectionName;
+        #endregion
+
+        /// <summary>
+        /// Firestore DB
+        /// </summary>
         public readonly FirestoreDb _firestoreDb;
 
         /// <summary>
@@ -34,7 +40,10 @@ namespace Umbrella.Infrastructure.Firestore
             this._CollectionName = collectionName;
             _firestoreDb = FirestoreDb.Create(projectId); 
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.GetAllAsync"/>
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<T>> GetAllAsync()
         {
             Query query = _firestoreDb.Collection(this._CollectionName);
@@ -53,7 +62,11 @@ namespace Umbrella.Infrastructure.Firestore
 
             return list;
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.GetAsync(IBaseFirestoreData)"/>
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<object?> GetAsync(IBaseFirestoreData entity)
         {
             var docRef = _firestoreDb.Collection(this._CollectionName).Document(entity.Id);
@@ -66,7 +79,11 @@ namespace Umbrella.Infrastructure.Firestore
             }
             return null;
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.AddAsync(T)"/>
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<T> AddAsync(T entity) 
         {
             var colRef = _firestoreDb.Collection(this._CollectionName);
@@ -83,20 +100,31 @@ namespace Umbrella.Infrastructure.Firestore
             entity.SetDocumentId(id);
             return entity;
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.UpdateAsync(T)"/>
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<T> UpdateAsync(T entity) 
         {
             var recordRef = _firestoreDb.Collection(this._CollectionName).Document(entity.Id);
             await recordRef.SetAsync(entity, SetOptions.MergeAll);
             return entity;
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.DeleteAsync(IBaseFirestoreData)"/>
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task DeleteAsync(IBaseFirestoreData entity) 
         {
             var recordRef = _firestoreDb.Collection(this._CollectionName).Document(entity.Id);
             await recordRef.DeleteAsync();
         }
-
+        /// <summary>
+        /// <inheritdoc cref="IFirestoreDataRepository{T}.GetReference"/>
+        /// </summary>
+        /// <returns></returns>
         public CollectionReference GetReference()
         {
             return this._firestoreDb.Collection(this._CollectionName);

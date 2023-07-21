@@ -45,6 +45,7 @@ For more details about download, see [NuGet Web Site](https://www.nuget.org/pack
 You can find more details about libraries here:
 
 - [Umbrella.Infrastructure.Cache](/src/README.Cache.md)
+- [Umbrella.Infrastructure.EmailHelper](/src/README.Email.md)
 - [Umbrella.Infrastructure.FireStore](/src/README.Firestore.md)
 - [Umbrella.Infrastructure.FileStorage](/src/README.FileStorage.md)
 - [Umbrella.Infrastructure.Templating](/src/README.Templating.md)

@@ -28,7 +28,7 @@ namespace Umbrella.Logging.Serilog
                     .Enrich.WithEnvironmentUserName()
                     .Enrich.WithThreadId()
                     .Enrich.WithClientIp()
-                    .Enrich.WithClientAgent()
+                    .Enrich.WithCorrelationId()
                     .Enrich.WithExceptionDetails()
                     .Enrich.WithProcessId()
                     .Enrich.WithProcessName()

@@ -31,7 +31,7 @@ namespace Umbrella.Infrastructure.Cache.Providers.Microsoft
             if (config == null)
                 throw new ArgumentNullException(nameof(config));
 
-            var settings = config.GetCacheSettings();
+            var settings = UmbrellaCacheSettingsExtensions.GetCacheSettings(config);
             services.AddMicrosoftCache(settings);
         }
         /// <summary>
