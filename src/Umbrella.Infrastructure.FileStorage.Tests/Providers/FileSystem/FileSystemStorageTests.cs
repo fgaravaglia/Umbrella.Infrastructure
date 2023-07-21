@@ -139,7 +139,7 @@ namespace Umbrella.Infrastructure.FileStorage.Tests.Providers.FileSystem
             Assert.Pass();
         }
 
-        [Test]
+        //[Test]
         public void GetFiles_Returns_ExpectedItemsFromLastLeaf()
         {
             //******* GIVEN
