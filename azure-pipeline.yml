@@ -91,9 +91,9 @@ extends:
       - path: src/Umbrella.Infrastructure.FileStorage.Tests
         name: Umbrella.Infrastructure.FileStorage.Tests
         # Firestore
-      - path: src/Umbrella.Infrastructure.Firestore.Tests
-        name: Umbrella.Infrastructure.Firestore.Tests
-        # Templating
+      # - path: src/Umbrella.Infrastructure.Firestore.Tests
+      #   name: Umbrella.Infrastructure.Firestore.Tests
+      # Templating
       - path: src/Umbrella.Infrastructure.Templating.Tests
         name: Umbrella.Infrastructure.Templating.Tests
         # Security
