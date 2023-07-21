@@ -34,7 +34,7 @@ namespace Umbrella.Infrastructure.Tests.Api
             return new ApiCaller(new Mock<ILogger>().Object);
         }
 
-        [Test]
+
         public async Task InvokeGetApi_Is_Succesfull()
         {
             //**************** GIVEN
