@@ -17,6 +17,10 @@ namespace Umbrella.Infrastructure.Configuration
 
         public IConfiguration Configuration { get; private set; }
 
+        /// <summary>
+        /// ode of current application
+        /// </summary> 
+        public string ApplicationCode { get{return this.Configuration.GetSection("Environment:Application").ToString();} }
         public EnvironmentSettings Environment { get { return this.GetSettings<EnvironmentSettings>(); } }
 
         #endregion

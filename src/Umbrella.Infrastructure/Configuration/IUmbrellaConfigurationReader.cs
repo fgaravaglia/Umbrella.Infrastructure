@@ -15,6 +15,10 @@ namespace Umbrella.Infrastructure.Configuration
         /// <value></value>
         EnvironmentSettings Environment{get;}
         /// <summary>
+        /// code of current application
+        /// </summary> 
+        string ApplicationCode {get;}
+        /// <summary>
         /// REgisters a new section with its Data type 
         /// </summary>
         /// <typeparam name="T"></typeparam>
