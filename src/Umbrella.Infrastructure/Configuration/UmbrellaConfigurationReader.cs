@@ -9,6 +9,7 @@ namespace Umbrella.Infrastructure.Configuration
     {
         #region Fields
 
+        const string AppSettingsKey_Environment = "Environment";
         private readonly Dictionary<Type, string> _SettingsName;
 
         #endregion
@@ -20,7 +21,7 @@ namespace Umbrella.Infrastructure.Configuration
         /// <summary>
         /// ode of current application
         /// </summary> 
-        public string ApplicationCode { get{return this.Configuration.GetSection("Environment:Application").ToString();} }
+        public string ApplicationCode { get{return this.Configuration.GetValue<string>(AppSettingsKey_Environment + ":Application") ?? ""; } }
         public EnvironmentSettings Environment { get { return this.GetSettings<EnvironmentSettings>(); } }
 
         #endregion
@@ -36,7 +37,7 @@ namespace Umbrella.Infrastructure.Configuration
 
             this.Configuration = config;
             this._SettingsName = new Dictionary<Type, string>();
-            this._SettingsName.Add(typeof(EnvironmentSettings), "Environment");
+            this._SettingsName.Add(typeof(EnvironmentSettings), AppSettingsKey_Environment);
         }
         /// <summary>
         /// REgisters a new section with its Data type 
