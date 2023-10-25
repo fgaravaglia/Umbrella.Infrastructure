@@ -23,7 +23,10 @@ namespace Umbrella.Infrastructure.Configuration
         /// </summary> 
         public string ApplicationCode { get{return this.Configuration.GetValue<string>(AppSettingsKey_Environment + ":Application") ?? ""; } }
         public EnvironmentSettings Environment { get { return this.GetSettings<EnvironmentSettings>(); } }
-
+        /// <summary>
+        /// Address for support emails
+        /// </summary> 
+        public string SupportEmailAddress { get { return this.Configuration.GetValue<string>("Support:MailAddress") ?? ""; } }
         #endregion
 
         /// <summary>

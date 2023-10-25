@@ -8,16 +8,20 @@ namespace Umbrella.Infrastructure.Configuration
         /// COnfiguration Reader from MSFT
         /// </summary>
         /// <value></value>
-        IConfiguration Configuration{get;}
+        IConfiguration Configuration { get; }
         /// <summary>
         /// read environment name
         /// </summary>
         /// <value></value>
-        EnvironmentSettings Environment{get;}
+        EnvironmentSettings Environment { get; }
         /// <summary>
         /// code of current application
         /// </summary> 
-        string ApplicationCode {get;}
+        string ApplicationCode { get; }
+        /// <summary>
+        /// Address for support emails
+        /// </summary> 
+        string SupportEmailAddress { get; }
         /// <summary>
         /// REgisters a new section with its Data type 
         /// </summary>
