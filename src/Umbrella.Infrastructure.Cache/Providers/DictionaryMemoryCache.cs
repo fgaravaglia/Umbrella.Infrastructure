@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Umbrella.Infrastructure.Cache.Providers
@@ -78,6 +79,14 @@ namespace Umbrella.Infrastructure.Cache.Providers
                 this._Logger.LogError(ex, "Unexpected error during clearing entire cache");
             }
             
+        }
+        /// <summary>
+        /// Gets the entries
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<ICacheEntry> GetEntries()
+        {
+            return this._Memory.Select(x => x.Value);
         }
     }
 }

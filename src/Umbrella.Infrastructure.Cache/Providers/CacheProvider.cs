@@ -172,5 +172,10 @@ namespace Umbrella.Infrastructure.Cache.Providers
         /// <inheritdoc cref="IMemoryCache.ClearCache"/>
         /// </summary>
         public abstract void ClearCache();
+        /// <summary>
+        /// Gets the entries
+        /// </summary>
+        /// <returns></returns>
+        public abstract IEnumerable<ICacheEntry> GetEntries();
     }
 }

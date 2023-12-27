@@ -103,5 +103,22 @@ namespace Umbrella.Infrastructure.Cache.Providers.Microsoft
                 }
             });
         }
+        /// <summary>
+        /// Gets the entries
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<ICacheEntry> GetEntries()
+        {
+            var values = new List<ICacheEntry>();
+            this._Keys.Distinct().ToList().ForEach(x =>
+            {
+                var entry = this.GetEntry(x);
+                if (entry != null)
+                    values.Add(entry);
+                else
+                    this._Logger.LogWarning("Key {key} not found in cache", x);
+            });
+            return values;
+        }
     }
 }

@@ -58,5 +58,10 @@ namespace Umbrella.Infrastructure.Cache
         /// Clear all entries
         /// </summary>
         void ClearCache();
+        /// <summary>
+        /// Gets the entries
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<ICacheEntry> GetEntries();
     }
 }
