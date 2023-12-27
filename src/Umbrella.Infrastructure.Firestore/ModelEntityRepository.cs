@@ -104,7 +104,7 @@ namespace Umbrella.Infrastructure.Firestore
             int deleteCounter = 0;
             foreach (var doc in existingList)
             {
-                if (!upToDateList.Any(x => x.Id == doc.Id))
+                if (!upToDateList.Exists(x => x.Id == doc.Id))
                 {
                     this._Logger.LogDebug("Found Obsolete Document: {docID} will be deleted from Firestore", doc.Id);
                     this._Repo.DeleteAsync(doc).Wait();

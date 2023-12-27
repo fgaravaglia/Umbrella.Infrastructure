@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+    <NoWarn>S2925</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
