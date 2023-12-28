@@ -47,8 +47,8 @@ extends:
   template: dotnet-pakages-pipeline.1.2.yaml@coreTemplates
   parameters:
     MajorVersion: 2
-    MinorVersion: 0
-    PatchVersion: 1
+    MinorVersion: 1
+    PatchVersion: 0
     SonarScanEnabled: ${{ parameters.inputSonarScanEnabled }}
     SonarSettings:
       ProjectKey: Umbrella.Infrastructure
