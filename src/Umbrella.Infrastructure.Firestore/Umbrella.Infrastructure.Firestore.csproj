@@ -14,6 +14,7 @@
 
   <PropertyGroup>
     <PackageId>Umbrella.Infrastructure.Firestore</PackageId>
+    <Version>2.2.0</Version>
     <Description>Library to provide a client for GCP Firestore, with Repository Pattern implementation</Description>
     <PackageProjectUrl>https://github.com/fgaravaglia/Umbrella.Infrastructure</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>

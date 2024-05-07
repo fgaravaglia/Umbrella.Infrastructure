@@ -10,6 +10,7 @@
 
   <PropertyGroup>
     <PackageId>Umbrella.Infrastructure</PackageId>
+    <Version>2.2.0</Version>
     <Company>Innova Solutions</Company>
     <Authors>FG</Authors>
     <Description>Library to Support generic capabilities in infrastructure Layer</Description>

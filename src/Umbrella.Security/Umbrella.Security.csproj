@@ -19,6 +19,7 @@
 
   <PropertyGroup>
     <PackageId>Umbrella.Security</PackageId>
+    <Version>2.2.0</Version>
     <Authors>FG</Authors>
     <Description>Library to implement authorization application logics</Description>
     <PackageProjectUrl>https://github.com/fgaravaglia/Umbrella.Infrastructure</PackageProjectUrl>

@@ -11,6 +11,7 @@
 
   <PropertyGroup>
     <PackageId>Umbrella.Logging</PackageId>
+    <Version>2.2.0</Version>
     <Company>Innova Solutions</Company>
     <Authors>FG</Authors>
     <PackageDescription>Library to Implement logging capabilities</PackageDescription>
@@ -45,5 +46,5 @@
     <None Include="..\..\README.md" Pack="true" PackagePath="" />
     <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
-  
+
 </Project>

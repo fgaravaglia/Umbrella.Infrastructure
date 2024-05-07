@@ -8,6 +8,7 @@
 
 	<PropertyGroup>
 		<PackageId>Umbrella.Infrastructure.FileStorage</PackageId>
+		<Version>2.2.0</Version>
 		<Authors>FG</Authors>
 		<Description>Library to abstract file persistence from File System or cloud provider</Description>
 		<PackageProjectUrl>https://github.com/fgaravaglia/Umbrella.Infrastructure</PackageProjectUrl>

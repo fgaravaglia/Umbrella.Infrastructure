@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-<PropertyGroup>
+  <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>8.0</LangVersion>
@@ -20,6 +20,7 @@
 
   <PropertyGroup>
     <PackageId>Umbrella.Infrastructure.Cache</PackageId>
+    <Version>2.2.0</Version>
     <Company>Innova Solutions</Company>
     <Authors>FG</Authors>
     <Description>Library to implement an abstraction for Cache providers, in order to facilitate the shift between in-memory approach to Distributed one, based on your system needs and requirements</Description>
