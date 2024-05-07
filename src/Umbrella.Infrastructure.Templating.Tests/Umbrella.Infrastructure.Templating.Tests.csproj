@@ -4,27 +4,16 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<PreserveCompilationContext>true</PreserveCompilationContext>
 		<IsPackable>false</IsPackable>
+		<LangVersion>preview</LangVersion>
 	</PropertyGroup>
-
-	<!--<ItemGroup>
-	  <None Remove="Razor\_EmbeddedLayout.cshtml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Razor\_EmbeddedLayout.cshtml">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </EmbeddedResource>
-	</ItemGroup>-->
-
-
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
 		<PackageReference Include="NUnit" Version="3.13.3" />
 		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
 		<PackageReference Include="coverlet.collector" Version="6.0.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
 
