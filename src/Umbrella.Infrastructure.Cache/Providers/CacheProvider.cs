@@ -27,7 +27,7 @@ namespace Umbrella.Infrastructure.Cache.Providers
         /// <param name="lifeTimeDurationInMinutes"></param>
         protected CacheProvider(ILogger logger, int lifeTimeDurationInMinutes, bool admitNullValues = false)
         {
-            this._Logger = logger ?? throw new ArgumentNullException(nameof(logger));   
+            this._Logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this._AdmitNullValues = admitNullValues;
             this._LifeTimeDurationInMinutes = lifeTimeDurationInMinutes;
         }
@@ -56,13 +56,13 @@ namespace Umbrella.Infrastructure.Cache.Providers
             if (this.Exists(key))
             {
                 // update the value in cache, refreshing its creation date for lifetime
-                this._Logger.LogDebug("Updating existing key on cache [{cacheKey}]", key);
+                this._Logger.LogDebug("Updating existing key on cache [{CacheKey}]", key);
                 UpdateEntry(key, entryValue);
             }
             else
             {
                 // add new entry
-                this._Logger.LogDebug("Create new entry on cache [{cacheKey}]", key);
+                this._Logger.LogDebug("Create new entry on cache [{CacheKey}]", key);
                 AddEntry(key, entryValue);
             }
         }
@@ -111,7 +111,7 @@ namespace Umbrella.Infrastructure.Cache.Providers
                 if (entry != null && entry.HasExpired(this._LifeTimeDurationInMinutes))
                 {
                     // expired: delete from memory
-                    this._Logger.LogDebug("removing expired entry on cache [{cacheKey}]", key);
+                    this._Logger.LogDebug("removing expired entry on cache [{CacheKey}]", key);
                     RemoveEntry(key);
                     return false;
                 }
@@ -124,7 +124,7 @@ namespace Umbrella.Infrastructure.Cache.Providers
             }
             catch (Exception ex)
             {
-                this._Logger.LogError(ex, "Unable to Get Entry for {cacheKey}", key);
+                this._Logger.LogError(ex, "Unable to Get Entry for {CacheKey}", key);
                 return false;
             }
         }
@@ -165,7 +165,7 @@ namespace Umbrella.Infrastructure.Cache.Providers
             }
             catch (Exception ex)
             {
-                this._Logger.LogError(ex, "Unexpected Error during removing key from cache [{cacheKey}]", key);
+                this._Logger.LogError(ex, "Unexpected Error during removing key from cache [{CacheKey}]", key);
             }
         }
         /// <summary>

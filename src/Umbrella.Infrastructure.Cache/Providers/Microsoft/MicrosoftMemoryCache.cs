@@ -55,7 +55,7 @@ namespace Umbrella.Infrastructure.Cache.Providers.Microsoft
         {
             if (this.ExistKey(key))
             {
-                this._Logger.LogDebug("Removing old entry to refresh it [{cacheKey}]", key);
+                this._Logger.LogDebug("Removing old entry to refresh it [{CacheKey}]", key);
                 RemoveEntry(key);
             }
             // update the value in cache, refreshing its creation date for lifetime
@@ -99,7 +99,7 @@ namespace Umbrella.Infrastructure.Cache.Providers.Microsoft
                 }
                 catch (Exception ex)
                 {
-                    this._Logger.LogError(ex, "Unexpected error during clearing entire cache at element {cacheKey}", x);
+                    this._Logger.LogError(ex, "Unexpected error during clearing entire cache at element {CacheKey}", x);
                 }
             });
         }
@@ -116,7 +116,7 @@ namespace Umbrella.Infrastructure.Cache.Providers.Microsoft
                 if (entry != null)
                     values.Add(entry);
                 else
-                    this._Logger.LogWarning("Key {key} not found in cache", x);
+                    this._Logger.LogWarning("Key {Key} not found in cache", x);
             });
             return values;
         }

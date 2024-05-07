@@ -27,7 +27,7 @@ namespace Umbrella.Infrastructure.Firestore
         /// <param name="mapper">mapper to translate firestore document to DTO and viceversa</param>
         /// <param name="firestoreRepo">component that implemetn generic repository for Firestore Documents</param>
         /// <param name="forceVariablesCheck">True to check for exxistance of 'GOOGLE_APPLICATION_CREDENTIALS' in environment variables</param>
-        protected ModelEntityRepository(ILogger logger, 
+        protected ModelEntityRepository(ILogger logger,
                                         IFirestoreDocMapper<T, Tdoc> mapper,
                                         IFirestoreDataRepository<Tdoc> firestoreRepo,
                                         bool forceVariablesCheck = false)
@@ -36,10 +36,10 @@ namespace Umbrella.Infrastructure.Firestore
             this._Mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
 
             // fill variable
-            if(forceVariablesCheck && String.IsNullOrEmpty(Environment.GetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS")))
+            if (forceVariablesCheck && String.IsNullOrEmpty(Environment.GetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS")))
                 throw new InvalidOperationException($"Missing Environment Variable: GOOGLE_APPLICATION_CREDENTIALS");
 
-            this._Logger.LogDebug("{modelRepositoryType} : Instance Firestore db...", this.GetType());
+            this._Logger.LogDebug("{ModelRepositoryType} : Instance Firestore db...", this.GetType());
             this._Repo = firestoreRepo ?? throw new ArgumentNullException(nameof(firestoreRepo));
         }
 
@@ -60,9 +60,9 @@ namespace Umbrella.Infrastructure.Firestore
         public virtual T GetById(string keyValue)
         {
             var doc = this._Repo.GetAsync(FirestoreDataReference.AsBaseFirestoreData(keyValue)).Result;
-            if(doc != null)
+            if (doc != null)
                 return this._Mapper.FromFirestoreDoc((Tdoc)doc);
-            else 
+            else
                 return default(T);
         }
         /// <summary>
@@ -72,22 +72,22 @@ namespace Umbrella.Infrastructure.Firestore
         /// <returns>the entity Id</returns>
         public virtual string Save(T dto)
         {
-            if(dto == null)
+            if (dto == null)
                 throw new ArgumentNullException(nameof(dto));
 
-            this._Logger.LogDebug($"Converting to Doc the incoming dto {dto.GetType()}");
+            this._Logger.LogDebug("Converting to Doc the incoming dto {DtoType}", dto.GetType());
             var matchDoc = this._Mapper.ToFirestoreDocument(dto);
 
-            this._Logger.LogDebug("Reading Doc {docid}", matchDoc.Id);
+            this._Logger.LogDebug("Reading Doc {Docid}", matchDoc.Id);
             var existing = this._Repo.GetAsync(matchDoc).Result;
             if (existing != null)
                 matchDoc = this._Repo.UpdateAsync(matchDoc).Result;
             else
                 matchDoc = this._Repo.AddAsync(matchDoc).Result;
-            if(matchDoc == null)
-                this._Logger.LogWarning("A Null Document has been returned from Firestoreof for type {repoType}", typeof(T).FullName);
+            if (matchDoc == null)
+                this._Logger.LogWarning("A Null Document has been returned from Firestoreof for type {RepoType}", typeof(T).FullName);
             else
-                this._Logger.LogDebug("Document {docId} of type {repoType} succesfully persisted on Firestore", matchDoc.Id, typeof(T).FullName);
+                this._Logger.LogDebug("Document {DocId} of type {repoType} succesfully persisted on Firestore", matchDoc.Id, typeof(T).FullName);
             return matchDoc != null ? matchDoc.Id : "";
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Umbrella.Infrastructure.Firestore
         public virtual void SaveAll(IEnumerable<T> dtos)
         {
             dtos.ToList().ForEach(m => this.Save(m));
-            this._Logger.LogInformation("Sucesfully persisted {counter} Documents on Firestore", dtos.Count());
+            this._Logger.LogInformation("Sucesfully persisted {Counter} Documents on Firestore", dtos.Count());
 
             var existingList = (List<Tdoc>)this._Repo.GetAllAsync().Result;
             var upToDateList = dtos.Select(x => this._Mapper.ToFirestoreDocument(x)).ToList();
@@ -106,12 +106,12 @@ namespace Umbrella.Infrastructure.Firestore
             {
                 if (!upToDateList.Exists(x => x.Id == doc.Id))
                 {
-                    this._Logger.LogDebug("Found Obsolete Document: {docID} will be deleted from Firestore", doc.Id);
+                    this._Logger.LogDebug("Found Obsolete Document: {DocID} will be deleted from Firestore", doc.Id);
                     this._Repo.DeleteAsync(doc).Wait();
                     deleteCounter++;
                 }
             }
-            this._Logger.LogInformation("Deleted {deleteCounter} Documents from Firestore", deleteCounter);
+            this._Logger.LogInformation("Deleted {DeleteCounter} Documents from Firestore", deleteCounter);
         }
         /// <summary>
         /// Deletes physically the document
@@ -123,7 +123,7 @@ namespace Umbrella.Infrastructure.Firestore
                 throw new ArgumentNullException(nameof(keyValue));
 
             var doc = this._Repo.GetAsync(FirestoreDataReference.AsBaseFirestoreData(keyValue)).Result;
-            if(doc == null)
+            if (doc == null)
                 throw new NullReferenceException("Unable to find document with id " + keyValue);
             this._Repo.DeleteAsync((IBaseFirestoreData)doc).Wait();
         }

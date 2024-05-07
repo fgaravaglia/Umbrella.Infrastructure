@@ -56,7 +56,7 @@ namespace Umbrella.Infrastructure.FileStorage.Tests.Providers.GoogleCloudStorage
             Assert.Pass();
         }
 
-       
+
         [Test]
         public void UseFileStorageFromGoogle_ThrowsExceptionAtResolveTime_IfCredentialsAreNull()
         {
@@ -73,7 +73,7 @@ namespace Umbrella.Infrastructure.FileStorage.Tests.Providers.GoogleCloudStorage
             Assert.False(provider == null, "Provider has not been created!");
             TestDelegate testCode = () => provider.GetService<IFileStorage>();
             InvalidOperationException ex = Assert.Throws<InvalidOperationException>(testCode);
-            Assert.True(ex.Message.StartsWith("The Application Default Credentials are not available", StringComparison.InvariantCultureIgnoreCase));
+            Assert.True(ex.Message.StartsWith("Your default credentials were not found", StringComparison.InvariantCultureIgnoreCase));
             Assert.Pass();
         }
     }
