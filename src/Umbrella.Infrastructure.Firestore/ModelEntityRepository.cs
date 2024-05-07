@@ -87,7 +87,7 @@ namespace Umbrella.Infrastructure.Firestore
             if (matchDoc == null)
                 this._Logger.LogWarning("A Null Document has been returned from Firestoreof for type {RepoType}", typeof(T).FullName);
             else
-                this._Logger.LogDebug("Document {DocId} of type {repoType} succesfully persisted on Firestore", matchDoc.Id, typeof(T).FullName);
+                this._Logger.LogDebug("Document {DocId} of type {RepoType} succesfully persisted on Firestore", matchDoc.Id, typeof(T).FullName);
             return matchDoc != null ? matchDoc.Id : "";
         }
         /// <summary>
