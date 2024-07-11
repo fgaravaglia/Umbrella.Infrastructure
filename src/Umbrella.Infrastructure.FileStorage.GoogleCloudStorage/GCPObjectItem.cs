@@ -25,11 +25,8 @@ namespace Umbrella.Infrastructure.FileStorage.GoogleCloudStorage
             this.ContainerId = containerId ?? "";
             this.Name = file.Name;
             this.Extension = "";
-            this.CreationTime = file.TimeCreated.HasValue ? file.TimeCreated.Value : DateTime.MinValue;
-            this.LastWriteTime = file.Updated.HasValue ? file.Updated.Value : this.CreationTime;
-
-            // this.CreationTime = file.TimeCreatedDateTimeOffset.HasValue ? file.TimeCreatedDateTimeOffset.Value.TO : DateTime.MinValue;
-            // this.LastWriteTime = file.UpdatedDateTimeOffset.HasValue ? file.Updated.Value : this.CreationTime;
+            this.CreationTime = file.TimeCreatedDateTimeOffset.HasValue ? file.TimeCreatedDateTimeOffset.Value.UtcDateTime : DateTime.MinValue;
+            this.LastWriteTime = file.UpdatedDateTimeOffset.HasValue ? file.UpdatedDateTimeOffset.Value.UtcDateTime : this.CreationTime;
         }
     }
 }
