@@ -7,9 +7,9 @@
 
 	<PropertyGroup>
 		<PackageId>Umbrella.Infrastructure.FileStorage.GoogleCloudStorage</PackageId>
-		<Version>2.2.0</Version>
+		<Version>4.10.0</Version>
 		<Description>Library to implement file storage on Google Cloud Provider based on Umbrella.Infrastructure.Firestore abstraction</Description>
-		<Copyright>FG 2022 - 2023</Copyright>
+		<Copyright>FG 2022 - 2025</Copyright>
 		<PackageProjectUrl>https://github.com/fgaravaglia/Umbrella.Infrastructure</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -22,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
 		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
 	</ItemGroup>
 

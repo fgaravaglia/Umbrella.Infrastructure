@@ -14,7 +14,7 @@
     <Company>Innova Solutions</Company>
     <Authors>FG</Authors>
     <Description>Library to Support generic capabilities in infrastructure Layer</Description>
-    <Copyright>FG 2023</Copyright>
+    <Copyright>FG 2023 -2024</Copyright>
     <PackageProjectUrl>https://github.com/fgaravaglia/Umbrella.Infrastructure</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -28,11 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.extensions.Configuration" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.binder" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
-    <PackageReference Include="System.text.json" Version="8.0.4" />
+    <PackageReference Include="Microsoft.extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.binder" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
+    <PackageReference Include="System.text.json" Version="0.0.0" />
   </ItemGroup>
 
 </Project>
