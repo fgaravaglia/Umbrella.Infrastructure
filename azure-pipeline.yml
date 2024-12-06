@@ -47,7 +47,7 @@ extends:
   template: dotnet-pakages-pipeline.1.2.yaml@coreTemplates
   parameters:
     UseCommonVersioning: true
-    MajorVersion: 8
+    MajorVersion: 9
     MinorVersion: 0
     PatchVersion: 0
     TargetDotNetFramework: 8.x
@@ -57,6 +57,7 @@ extends:
       ProjectName: Umbrella.Infrastructure
       TestReportFileName: cobertura.xml
     PublishPackage: ${{ parameters.inputPublishPackage }}
+    CustomNugetFile: src/Nuget.config
     NugetSecretFileName: Nuget.apikey.txt
     OwaspScanEnabled: ${{ parameters.inputOwaspScanEnabled }}
     ListOfProjToBuild:
