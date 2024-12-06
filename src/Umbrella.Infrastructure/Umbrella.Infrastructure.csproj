@@ -32,7 +32,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.binder" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
-    <PackageReference Include="System.text.json" Version="0.0.0" />
+    <PackageReference Include="System.text.json" Version="9.0.0" />
   </ItemGroup>
 
 </Project>

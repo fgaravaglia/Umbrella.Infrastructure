@@ -11,7 +11,7 @@ namespace Umbrella.Infrastructure.FileStorage.Providers.FileSystem
     /// Abstraction of File storage implemente by File System usage
     /// </summary>
     public interface IFileSystemStorage : IFileStorage
-    { 
+    {
         /// <summary>
         /// Root folder of the container
         /// </summary>
@@ -76,12 +76,12 @@ namespace Umbrella.Infrastructure.FileStorage.Providers.FileSystem
             if (string.IsNullOrEmpty(containerId))
                 throw new ArgumentNullException(nameof(containerId));
 
-            if(!this.IsScanPerformed)
+            if (!this.IsScanPerformed)
                 this.ScanStorageTree();
 
             // translate containerId into path
             var container = GetContainer(containerId);
-            if(container == null)
+            if (container == null)
                 throw new FileStorageException($"Target Folder does not exist", containerId, true);
 
             // the concrete folder path
@@ -142,12 +142,12 @@ namespace Umbrella.Infrastructure.FileStorage.Providers.FileSystem
 
         #region Private Methods
 
-        bool IsLocalhost()
+        static bool IsLocalhost()
         {
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             return environment == "Localhost";
         }
-        
+
         void AddDirectoryAndChildrenToIndex(DirectoryInfo directory)
         {
             // build container for this directory
